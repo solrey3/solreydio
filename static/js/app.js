@@ -1,33 +1,8 @@
-
-// from data.js
-var tableData = data;
-
-// var jsonFile = "data/favoritealbums_df.json";
-// var tableData = d3.json(jsonFile, function(data) {
-//     console.log(data);
-// });
-
-// Plotly.d3.json(jsonFile, function(data) {
-//     console.log(data);
-//   });
-
-// var csvFile = "favoritealbums_df.csv";
-// var tableData = d3.csv(csvFile, function(data) {
-//     console.log(data);
-// });
-
-console.log(tableData);
-
-
-
 // Use D3 to select the table
 var table = d3.select("table");
 
 // Use D3 to select the table body
 var tbody = d3.select("tbody");
-
-// Columns: `datetime`, `city`, `state`, `country`, `shape`, `durationMinutes`, 
-// and `comments`
 
 var years = [];
 var album1Values = [];
@@ -37,9 +12,7 @@ function tableResults(items) {
 
     var i = 1;
     var albumYearCount = 1;
-
     var releaseYear = "1900"
-
 
     // Iterate through each item object
     items.forEach((item) => {
@@ -89,102 +62,32 @@ function tableResults(items) {
     });
 
     album1Values.push(albumYearCount);
-}
 
-
-tableResults(tableData);
-
-
-
-// Create the Trace
-var trace1 = {
-    x: years,
-    y: album1Values,
-    type: "bar"
-};
-  
-// Create the data array for the plot
-var data = [trace1];
-  
-// Define the plot layout
-var layout = {
-    title: "Albums by Year",
-    xaxis: { title: "Year" },
-    yaxis: { title: "Count" }
-};
-  
-  // Plot the chart to a div tag with id "bar-plot"
-Plotly.newPlot("bar-plot", data, layout);
-
-// // Select the button
-// var button = d3.select("#filter-btn");
-
-// // Select the form
-// var form = d3.select("form");
-
-// // Create event handlers 
-// button.on("click", runEnter);
-// form.on("submit", runEnter);
-
-// // Complete the event handler function for the form
-// function runEnter() {
-
-//     // Prevent the page from refreshing
-//     d3.event.preventDefault();
+    // Create the Trace
+    var trace1 = {
+        x: years,
+        y: album1Values,
+        type: "bar"
+    };
     
-//     // Select the input element and get the raw HTML node
-//     var inputElement = d3.select("#datetime");
-  
-//     // Get the value property of the input element
-//     var inputValue = inputElement.property("value");
-//     console.log(inputValue.length)
-
-//     // Filter on datetime   
-//     var filteredData = tableData.filter(item => item.datetime === inputValue);
-//     console.log(filteredData)
-
-//     // If no input, then show full table, else generate new table results
-//     if (inputValue.length === 0) {
-//         tbody.html("");
-//         tableResults(tableData);
-//     }
-//     else {
-//         tbody.html("");
-//         tableResults(filteredData);
-//     }
-      
-// };
-
-// var filteredData = tableData;
-
-// // Complete the event handler function for the form
-// function runEnter() {
-
-//     // Prevent the page from refreshing
-//     d3.event.preventDefault();
+    // Create the data array for the plot
+    var data = [trace1];
     
-//     // Create JS Object for multiple input values
-//     var inputValues = {};
-
-//     inputValues.datetime = d3.select("#datetime").property("value");
-//     inputValues.city = d3.select("#city").property("value").toLowerCase();
-//     inputValues.state = d3.select("#state").property("value").toLowerCase();
-//     inputValues.country = d3.select("#country").property("value").toLowerCase();
-//     inputValues.shape = d3.select("#shape").property("value").toLowerCase();
-//     console.log(inputValues);
+    // Define the plot layout
+    var layout = {
+        title: "Albums by Year",
+        xaxis: { title: "Year" },
+        yaxis: { title: "Count" }
+    };
     
-//     // Iterate JS Object
-//     var filteredData = tableData;
- 
-//     // Filter on each input value if one exists
-//     Object.entries(inputValues).forEach(([key, value]) => {
-//         if (value.length > 0) {
-//             filteredData = filteredData.filter(item => item[key] === value);
-//         }
-//     });
+    // Plot the chart to a div tag with id "bar-plot"
+    Plotly.newPlot("bar-plot", data, layout);
+    }
 
-//     // Clear HTML table body and provide filtered results
-//     tbody.html("");
-//     tableResults(filteredData);
-      
-// };
+
+var jsonFile = "https://solrey3.github.io/solreydio/data/favoritealbums_df.json";
+
+Plotly.d3.json(jsonFile, function(jsonData) {
+    tableResults(jsonData);
+});
+

@@ -153,7 +153,7 @@ select {
   #table-area tr td:first-child {
     font-size: 1.8em;
     font-weight: bold;
-    background: #1b3146;
+    background: black;
   }
 
   #table-area tr td:last-child {
