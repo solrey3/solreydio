@@ -2,18 +2,21 @@
 // from data.js
 var tableData = data;
 
-// var jsonFile = "favoritealbums_df.json";
+// var jsonFile = "data/favoritealbums_df.json";
 // var tableData = d3.json(jsonFile, function(data) {
 //     console.log(data);
 // });
-// var tableData = JSON.parse(jsonFile);
+
+// Plotly.d3.json(jsonFile, function(data) {
+//     console.log(data);
+//   });
 
 // var csvFile = "favoritealbums_df.csv";
 // var tableData = d3.csv(csvFile, function(data) {
 //     console.log(data);
 // });
 
-// console.log(tableData);
+console.log(tableData);
 
 
 
