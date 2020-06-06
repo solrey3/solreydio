@@ -85,7 +85,7 @@ function tableResults(items) {
     }
 
 
-var jsonFile = "https://solrey3.github.io/solreydio/data/favoritealbums_df.json";
+var jsonFile = "https://solrey3.github.io/solreydio/data/favoritealbums.json";
 
 Plotly.d3.json(jsonFile, function(jsonData) {
     tableResults(jsonData);
