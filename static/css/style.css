@@ -170,7 +170,7 @@ select {
   }
 
   #table-area td {
-    font-size: 1.25em;
+    font-size: 1em;
   }
 
   #table-area tbody td {
@@ -180,7 +180,7 @@ select {
 
   #table-area tbody td::before {
     display: block;
-    font-size: 1.4em;
+    font-size: 1.25em;
     font-weight: bold;
     text-align: center;
     content: attr(data-th);

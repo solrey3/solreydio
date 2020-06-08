@@ -84,9 +84,21 @@ function tableResults(items) {
     }
 
 
-var jsonFile = "https://solrey3.github.io/solreydio/data/favoritealbums.json";
+var jsonFav = "https://solrey3.github.io/solreydio/data/favoritealbums.json";
 
-Plotly.d3.json(jsonFile, function(jsonData) {
-    tableResults(jsonData);
+Plotly.d3.json(jsonFav, function(favData) {
+    tableResults(favData);
+});
+
+var jsonRank = "https://solrey3.github.io/solreydio/data/ranked.json";
+
+Plotly.d3.json(jsonRank, function(ranks) {
+    var rankList = d3.select("#rank-list");
+    ranks.forEach((rank) => {
+        var rankItem = rankList.append("a").text(rank.rank +". "+ rank.album +" - "+ rank.artist +" ("+ rank.release_date +")");
+        rankItem.attr("class", "list-group-item list-group-item-action");
+        rankItem.attr("href", rank.wikipedia_url).attr("target", "_blank");
+    });
+        
 });
 
