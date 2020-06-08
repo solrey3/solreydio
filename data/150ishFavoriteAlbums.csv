@@ -49,7 +49,7 @@ rank,artist,album,wikipedia_url,release_date
 ,Fleetwood Mac,Rumours,https://en.wikipedia.org/wiki/Rumours_(album),1977-02-04
 30,Television,Marquee Moon,https://en.wikipedia.org/wiki/Marquee_Moon,1977-02-08
 ,The Clash,The Clash,https://en.wikipedia.org/wiki/The_Clash_(album),1977-04-08
-,Billy Joel,The Stranger,https://en.wikipedia.org/wiki/The_Stranger_(album),1977-09
+42,Billy Joel,The Stranger,https://en.wikipedia.org/wiki/The_Stranger_(album),1977-09
 ,Steely Dan,Aja,https://en.wikipedia.org/wiki/Aja_(album),1977-09-23
 12,Funkadelic,One Nation Under A Groove,https://en.wikipedia.org/wiki/One_Nation_Under_a_Groove,1978-09-22
 ,Bob Marley & The Wailers,Babylon By Bus,https://en.wikipedia.org/wiki/Babylon_by_Bus,1978-11-10
@@ -152,7 +152,7 @@ rank,artist,album,wikipedia_url,release_date
 34,Amy Winehouse,Back To Black,https://en.wikipedia.org/wiki/Back_to_Black,2006-10-27
 ,Spoon,Ga Ga Ga Ga Ga,https://en.wikipedia.org/wiki/Ga_Ga_Ga_Ga_Ga,2007-07-07
 ,Okkervil River,The Stage Names,https://en.wikipedia.org/wiki/The_Stage_Names,2007-08-07
-,MIA,Kala,https://en.wikipedia.org/wiki/Kala_(album),2007-08-08
+,M.I.A.,Kala,https://en.wikipedia.org/wiki/Kala_(album),2007-08-08
 ,Kanye West,Graduation,https://en.wikipedia.org/wiki/Graduation_(album),2007-09-11
 ,Sharon Jones & The Dap-Kings,"100 Days, 100 Nights","https://en.wikipedia.org/wiki/100_Days,_100_Nights",2007-10-02
 ,Radiohead,In Rainbows,https://en.wikipedia.org/wiki/In_Rainbows,2007-10-10
