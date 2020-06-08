@@ -24,10 +24,7 @@ function tableResults(items) {
         Object.entries(item).forEach(([key, value]) => {    
   
           // Use the key to determine which array to push the value to
-            if (key === "artist") {
-                row.append("td").text(value);
-            }
-            else if (key === "album") {
+            if (key === "album") {
                 var tdAlbum = row.append("td");
                 var aAlbum = tdAlbum.append("a").text(value);
                 aAlbum.attr("id", "album-"+ i.toString());
@@ -41,7 +38,9 @@ function tableResults(items) {
                 i += 1;
                 // console.log(i);
             }
-
+            else if (key === "artist") {
+                row.append("td").text(value);
+            }
             else if (key === "release_date") {
                 row.append("td").text(value);
                 albumReleaseYear = value.substring(0,4);
