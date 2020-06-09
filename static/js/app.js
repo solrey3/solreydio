@@ -102,3 +102,42 @@ Plotly.d3.json(jsonRank, function(ranks) {
         
 });
 
+var jsonArtistCount = "https://solrey3.github.io/solreydio/data/artistcounts.json";
+
+Plotly.d3.json(jsonArtistCount, function(artistAlbumCounts) {
+    var artists = [];
+    var albumTotals = [];
+    artistAlbumCounts.forEach((artist) => {
+        artists.push(artist.artist);
+        albumTotals.push(artist.count);
+    
+    // Create the Trace
+    var trace2 = {
+        y: albumTotals,
+        x: artists,
+        type: "bar"
+    };
+    
+    // Create the data array for the plot
+    var data = [trace2];
+    
+    // Define the plot layout
+    var layout = {
+        title: "Albums by Artist",
+        xaxis: { title: "Artist" },
+        yaxis: { title: "Count" },
+        margin: {
+            l: 100,
+            r: 100,
+            t: 100,
+            b: 100
+          }
+        
+    };
+    
+    // Plot the chart to a div tag with id "bar-plot"
+    Plotly.newPlot("artist-bar-plot", data, layout);
+    
+    });
+
+});
