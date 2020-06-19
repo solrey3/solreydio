@@ -3,9 +3,9 @@ google.charts.setOnLoadCallback(init);
 
 function init() {
   var url =
-    'https://docs.google.com/spreadsheets/d/1XxF6xfj03gAocNZ6dm_uNOAtr4QS9yD2LlzQZU-zIEo/edit?usp=sharing';
+    'https://docs.google.com/spreadsheets/d/1q7_MAd0QDG7R_EJwMOKBfg28oSU-39kwWE-XSAMS0NY/edit?usp=sharing';
   var query = new google.visualization.Query(url);
-  query.setQuery('select A, B, D, L, Q');
+  query.setQuery('select A, B, C, D, E');
   query.send(processSheetsData);
 }
 
@@ -24,8 +24,9 @@ function processSheetsData(response) {
       array.push({
         name: row[0],
         artist: row[1],
-        year: row[4],
-        album: row[2],
+        year: row[2],
+        album: row[3],
+        youtube_url: row[4]
         // time: +row[3],
         
       });
@@ -62,17 +63,19 @@ function tableResults(items) {
             if (key === "name") {
                 var tdTitle = row.append("td");
                 var aTitle = tdTitle.append("a").text(value);
-                // aAlbum.attr("id", "album-"+ i.toString());
+                aTitle.attr("id", "song-"+ i.toString());
             }
-            // else if (key === "wikipedia_url") {
-            //     var idAlbum = "#album-" + i.toString()
-            //     // console.log(idAlbum)
-            //     var tdURL = d3.select(idAlbum)
-            //     tdURL.attr("href", value);
-            //     tdURL.attr("target", "_blank")
-            //     i += 1;
-            //     // console.log(i);
-            // }
+            else if (key === "youtube_url") {
+                if (value !== "Not Found") {
+                    var idTitle = "#song-" + i.toString()
+                    // console.log(idAlbum)
+                    var tdURL = d3.select(idTitle)
+                    tdURL.attr("href", value);
+                    tdURL.attr("target", "_blank");
+                    i += 1;
+                    // console.log(i);
+                }
+            }
             else if (key === "artist") {
                 row.append("td").text(value);
             }
