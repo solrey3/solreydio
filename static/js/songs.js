@@ -150,8 +150,8 @@ function runEnter() {
     var inputValues = {};
 
     inputValues.year = d3.select("#year").property("value");
-    inputValues.name = d3.select("#name").property("value").toLowerCase();
-    inputValues.artist = d3.select("#artist").property("value").toLowerCase();
+    inputValues.name = d3.select("#name").property("value").trim().toLowerCase();
+    inputValues.artist = d3.select("#artist").property("value").trim().toLowerCase();
     // console.log(inputValues);
     
     // Iterate JS Object
