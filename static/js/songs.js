@@ -72,9 +72,9 @@ function tableResults(items) {
                     var tdURL = d3.select(idTitle)
                     tdURL.attr("href", value);
                     tdURL.attr("target", "_blank");
-                    i += 1;
                     // console.log(i);
                 }
+                i += 1;
             }
             else if (key === "artist") {
                 row.append("td").text(value);
