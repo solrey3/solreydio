@@ -108,7 +108,7 @@ function songsByYear() {
 
     // Create the Trace
     var trace1 = {
-        x: years,
+        x: years.map(object => "Y"+ object),
         y: song1Values,
         type: "bar"
     };
