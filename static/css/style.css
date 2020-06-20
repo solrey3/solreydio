@@ -151,7 +151,7 @@ select {
   }
 
   #table-area tr td:first-child {
-    font-size: 1.8em;
+    font-size: 1em;
     font-weight: bold;
     background: #1b3146;
   }
