@@ -187,7 +187,7 @@ select {
   }
 
   .hero h1 {
-    animation: smaller-title 1.2s forwards linear;
+    animation: title 1.2s forwards linear;
   }
 }
 
