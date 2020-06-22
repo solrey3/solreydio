@@ -5,7 +5,7 @@ function init() {
   var url =
     'https://docs.google.com/spreadsheets/d/1q7_MAd0QDG7R_EJwMOKBfg28oSU-39kwWE-XSAMS0NY/edit?usp=sharing';
   var query = new google.visualization.Query(url);
-  query.setQuery('select A, B, C, D, E');
+  query.setQuery('select B, C, D, E, F');
   query.send(processSheetsData);
 }
 
